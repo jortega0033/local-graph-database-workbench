@@ -6,7 +6,7 @@ const USAGE: &str = "waymark: offline graph workbench
 
 Usage: waymark <command>
 
-Commands:
+Commands (not implemented yet):
   demo    run the bundled seed
   init    create a database
   load    load a batch into a database

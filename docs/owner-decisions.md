@@ -35,4 +35,5 @@ The plan leaves these open. Each is a recommendation by the orchestrator, adopte
 | #4 | Lock | `File::try_lock` and `File::try_lock_shared` on the journal file (stable since Rust 1.89). A busy lock is an error, never a wait. |
 | #5 | Plan choice on a tie | Equal cardinality uses the label scan, as the plan says ("smaller than"). |
 | all | Owner checks | Manual browser steps run in WSL2 or on a Linux host. |
-| none | Licence | Not selected. No ticket depends on it and none adds a LICENSE. |
+| none | Windows CI | Extends entry 8: the `rust` job also runs on `windows-latest`, only as a build and test of the portable scaffold. Linux is the supported platform. |
+| none | Licence | MIT, in `LICENSE` on `main` since before the kit. No ticket changes it. |

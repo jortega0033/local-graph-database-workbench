@@ -47,7 +47,7 @@ Rust is not installed on the owner's PC and nothing is installed there. **Rust c
 | Demo with the bundled seed | `./target/debug/waymark demo` | planned: #2 |
 | Create and load a database | `./target/debug/waymark init <db>` | planned: #4 |
 | Query | `./target/debug/waymark query <db> <query>` | planned: #5 |
-| Serve a database | `./target/debug/waymark serve <db>` | planned: #4 and #6 |
+| Serve a database | `./target/debug/waymark serve <db>` | planned: #4 |
 
 ## Architecture boundaries
 
