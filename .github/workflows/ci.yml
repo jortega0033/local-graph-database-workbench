@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   hook:
-    # Review gate hook self-test. The scaffold adds the product jobs.
+    # Review gate hook self-test.
     name: hook (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
@@ -28,3 +28,26 @@ jobs:
           python-version: "3.13"
       - name: Review gate hook self-test
         run: python .claude/hooks/role_gate.py --self-test
+
+  rust:
+    # Windows only builds and tests the portable scaffold; Linux is the supported platform.
+    name: rust (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install Rust 1.89.0
+        run: |
+          rustup toolchain install 1.89.0 --profile minimal --component rustfmt --component clippy
+          rustup default 1.89.0
+      - name: Format check
+        run: cargo fmt --check
+      - name: Lints
+        run: cargo clippy --frozen -- -D warnings
+      - name: Build
+        run: cargo build --frozen
+      - name: Test
+        run: cargo test --frozen
