@@ -6,7 +6,7 @@ Working instructions for this repository. Read this file first, then the documen
 
 An offline workbench for a developer with a small graph: load sample relationships, run a bounded one- or two-hop query in the browser or the command line, see the exact edges and the access path, import whole batches durably, restart and get the same answer. Rust standard library only, `127.0.0.1` only, Linux or WSL2.
 
-**Nothing is implemented yet.** The repository holds the plan, the delivery tooling and the backlog in epic #1. Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing baseline: there is none.
+**Only the scaffold exists, with no product behaviour.** The repository holds the plan, the delivery tooling, the backlog in epic #1 and a runnable Rust scaffold (module layout, help, version, stub commands, smoke tests). Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing baseline: there is none.
 
 ## Sources of truth
 
@@ -19,7 +19,7 @@ An offline workbench for a developer with a small graph: load sample relationshi
 | Project subagents, origin and local changes | [.claude/agency-agents/README.md](.claude/agency-agents/README.md) |
 | Ticket workflow and the step at which each role runs | [.claude/skills/implement-ticket/SKILL.md](.claude/skills/implement-ticket/SKILL.md), section "Agent roles" below |
 | How a ticket goes from the queue to a ready pull request, who may do what | "Delivery workflow" below |
-| UI and copy rules | [docs/ui-quality.md](docs/ui-quality.md) |
+| UI and copy rules, design tokens | [docs/ui-quality.md](docs/ui-quality.md), [docs/design-tokens.md](docs/design-tokens.md) |
 | Decisions the owner made, with dates | [docs/owner-decisions.md](docs/owner-decisions.md) |
 
 The plan wins for product design; the epic and tickets win for order and scope. A ticket that changes a contract fixes the plan in the same pull request.
@@ -40,14 +40,14 @@ Rust is not installed on the owner's PC and nothing is installed there. **Rust c
 
 | Purpose | Command | Status |
 |---|---|---|
-| Build | `cargo build --frozen` | planned: real with the scaffold |
-| Format check | `cargo fmt --check` | planned: real with the scaffold |
-| Lints | `cargo clippy --frozen -- -D warnings` | planned: real with the scaffold |
-| Tests | `cargo test --frozen` | planned: real with the scaffold |
+| Build | `cargo build --frozen` | real (scaffold), verified in CI only |
+| Format check | `cargo fmt --check` | real (scaffold), verified in CI only |
+| Lints | `cargo clippy --frozen -- -D warnings` | real (scaffold), verified in CI only |
+| Tests | `cargo test --frozen` | real (scaffold), verified in CI only |
 | Demo with the bundled seed | `./target/debug/waymark demo` | planned: #2 |
 | Create and load a database | `./target/debug/waymark init <db>` | planned: #4 |
 | Query | `./target/debug/waymark query <db> <query>` | planned: #5 |
-| Serve a database | `./target/debug/waymark serve <db>` | planned: #4 and #6 |
+| Serve a database | `./target/debug/waymark serve <db>` | planned: #4 |
 
 ## Architecture boundaries
 
@@ -122,7 +122,7 @@ How a ticket reaches the owner. Each piece is described in its own file; this pa
 - **Pull request:** [`.github/pull_request_template.md`](.github/pull_request_template.md). Tickets use [`.github/ISSUE_TEMPLATE/implementation-ticket.md`](.github/ISSUE_TEMPLATE/implementation-ticket.md).
 - **Labels:** `status:ready`, `status:blocked`, `status:in-progress`, `needs-decision`, `tracking` (parent container, never worked; its sub-issues are the work items).
 - **Changelog:** every ticket pull request adds one line under Unreleased in [CHANGELOG.md](CHANGELOG.md).
-- **UI and copy:** [docs/ui-quality.md](docs/ui-quality.md); the `ui-ux-pro-max` and `unslop` skills are in `.claude/skills/`.
+- **UI and copy:** [docs/ui-quality.md](docs/ui-quality.md); the `ui-ux-pro-max` and `unslop` skills are in `.claude/skills/`. Colours come from the shared design tokens in `web/tokens.css` ([docs/design-tokens.md](docs/design-tokens.md)); new UI adds no colour literals.
 - **Decisions:** [docs/owner-decisions.md](docs/owner-decisions.md). Security reports: [SECURITY.md](SECURITY.md).
 - **Merge and release:** only the owner merges and releases ([docs/RELEASING.md](docs/RELEASING.md)). An agent stops at a ready pull request.
 

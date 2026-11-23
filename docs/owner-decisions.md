@@ -18,6 +18,8 @@ The owner made decisions 1 to 10 and 12 on 2026-11-22 for all repositories that 
 | 10 | Open decisions on tickets are settled with the ticket's stated default; where a ticket states none, the conservative option is taken and flagged in the issue. | decided by the owner | 2026-11-22 | The list below; the issues themselves |
 | 11 | Rust is verified in CI only; nothing is installed on the owner's PC. The crate has no dependencies. | decided by the owner (2026-11-22, entry 11 of the kit); repeated here for this repository | 2026-11-23 | `CLAUDE.md` "Commands", `.github/workflows/ci.yml` |
 | 12 | The ten UI rules in `docs/ui-quality.md` are binding, and the `ui-ux-pro-max` and `unslop` skills are installed in the repository and used for UI work and for copy. | decided by the owner | 2026-11-22 | `docs/ui-quality.md`, `.claude/skills/` |
+| 13 | Visual system: the Pipenzo Flow look tokens. | decided by the owner | 2026-11-23 | `web/tokens.css`, `docs/design-tokens.md` |
+| 14 | Token rules 14-D1 to 14-D4. | 14-D1 use of yellow decided by the owner; how it is drawn, and 14-D2 to 14-D4, recommended by the orchestrator and adopted under the owner's delegation of 2026-11-23 | 2026-11-23 | `docs/design-tokens.md`; applied in UI tickets |
 
 ## Open ticket decisions settled by default (entry 10)
 
@@ -33,4 +35,5 @@ The plan leaves these open. Each is a recommendation by the orchestrator, adopte
 | #4 | Lock | `File::try_lock` and `File::try_lock_shared` on the journal file (stable since Rust 1.89). A busy lock is an error, never a wait. |
 | #5 | Plan choice on a tie | Equal cardinality uses the label scan, as the plan says ("smaller than"). |
 | all | Owner checks | Manual browser steps run in WSL2 or on a Linux host. |
-| none | Licence | Not selected. No ticket depends on it and none adds a LICENSE. |
+| none | Windows CI | Extends entry 8: the `rust` job also runs on `windows-latest`, only as a build and test of the portable scaffold. Linux is the supported platform. |
+| none | Licence | MIT, in `LICENSE` on `main` since before the kit. No ticket changes it. |

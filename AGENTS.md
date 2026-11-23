@@ -4,9 +4,9 @@ The full repository instructions are in [CLAUDE.md](CLAUDE.md). This file repeat
 
 ## Status
 
-Nothing is implemented. The repository holds the plan (`docs/PROJECT-PLAN.md`), the delivery tooling and the backlog (epic #1). Rust is not installed on the owner's PC; Rust checks run in CI only.
+Only the scaffold exists, with no product behaviour. The repository holds the plan (`docs/PROJECT-PLAN.md`), the delivery tooling, the backlog (epic #1) and a runnable Rust scaffold. Rust is not installed on the owner's PC; Rust checks run in CI only.
 
-## Commands (planned; the scaffold makes the first ones real)
+## Commands (the first four are real in the scaffold, verified in CI only; the rest are planned)
 
 ```
 cargo build --frozen
