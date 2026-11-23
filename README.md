@@ -9,3 +9,7 @@ Implementation is planned. The scope, architecture and acceptance criteria are i
 - [Implementation backlog and epic](https://github.com/jortega0033/local-graph-database-workbench/issues)
 
 Estimated implementation and verification effort is 17–27 engineering hours.
+
+## License
+
+[MIT](LICENSE) © 2026 Jake Ortega.
