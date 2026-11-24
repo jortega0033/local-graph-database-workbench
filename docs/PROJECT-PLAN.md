@@ -1,5 +1,7 @@
 # Local Graph Database Workbench
 
+> This document specifies phase 1 of the program in [#39](https://github.com/jortega0033/local-graph-database-workbench/issues/39). Hour figures in it are early estimates for that phase; its open tickets add up to 56 to 96 hours (2026-11-24). Work that it defers is planned in the later phases only where the program names it.
+
 Product and engineering plan for Waymark Graph. The browser workbench, storage layer and query engine are planned.
 
 ## Product requirements

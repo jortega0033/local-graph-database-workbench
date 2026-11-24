@@ -37,3 +37,13 @@ The plan leaves these open. Each is a recommendation by the orchestrator, adopte
 | all | Owner checks | Manual browser steps run in WSL2 or on a Linux host. |
 | none | Windows CI | Extends entry 8: the `rust` job also runs on `windows-latest`, only as a build and test of the portable scaffold. Linux is the supported platform. |
 | none | Licence | MIT, in `LICENSE` on `main` since before the kit. No ticket changes it. |
+
+## Program decisions (owner, 2026-11-24)
+
+The owner accepted the goal and each suggestion below. They apply from the phase they name; the rules of `CLAUDE.md` hold for phase 1 as written.
+
+| Decision | Implemented in |
+|---|---|
+| The repository has a program goal above phase 1: a complete graph database in Rust, in six phases. | Program issue #39 |
+| Compatibility scenarios are Apache-2.0. Suggested: fetch at a pinned release and keep the notice. | Program issue #39 |
+| Dependency rules stay as they are until the storage phase. | Program issue #39 |
